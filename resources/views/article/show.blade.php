@@ -5,7 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('View Article') }}</div>
+                <div class="card-header">{{ __('Edit Article') }}
+                    @if(auth()->user())
+                        <a href="{{ url()->previous() }}" style="float: right;"
+                            class="btn btn-success btn-sm" title="Add New Article">X</a>
+                    @endif
+                </div>
 
                 <div class="card-body">
                     <form action="{{ url('article') }}" method="post">

@@ -17,6 +17,9 @@ use App\Http\Controllers\ArticleController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/profile', function () {
+    return view('profile.index');
+});
 
 Route::resource('/article', ArticleController::class);
 Route::resource('/home', ArticleController::class);
