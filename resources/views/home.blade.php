@@ -50,6 +50,10 @@
                                 @endforeach
                             </tbody>
                         </table>
+
+                        <!--  -->
+                        {{ $articles->onEachSide(1)->links(); }}
+
                     </div>
                 </div>
                 <!-- idk -->
