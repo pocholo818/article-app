@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\Web\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,8 +22,7 @@ Route::get('/profile', function () {
 });
 
 Route::resource('/article', ArticleController::class);
-Route::resource('/home', ArticleController::class);
 
 Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

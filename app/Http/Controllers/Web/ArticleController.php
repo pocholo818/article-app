@@ -7,6 +7,7 @@ use App\Models\Article;
 
 class ArticleController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      */
@@ -14,7 +15,7 @@ class ArticleController extends Controller
     {
         //
         $articles = Article::paginate(2);
-        return view('home')->with('articles', $articles);
+        return view('web.article.index')->with('articles', $articles);
     }
 
     /**
@@ -23,7 +24,7 @@ class ArticleController extends Controller
     public function create()
     {
         //
-        return view('article.create');
+        return view('web.article.create');
     }
 
     /**
@@ -34,7 +35,7 @@ class ArticleController extends Controller
         //
         $input = $request->all();
         Article::create($input);
-        return redirect('article')->with('flash_message', 'Article Added!');
+        return redirect('web.article')->with('flash_message', 'Article Added!');
     }
 
     /**
@@ -44,7 +45,7 @@ class ArticleController extends Controller
     {
         //
         $articles = Article::find($id);
-        return view('article.show')->with('articles', $articles);
+        return view('web.article.show')->with('articles', $articles);
     }
 
     /**
@@ -54,7 +55,7 @@ class ArticleController extends Controller
     {
         //
         $articles = Article::find($id);
-        return view('article.edit')->with('articles', $articles);
+        return view('web.article.edit')->with('articles', $articles);
     }
 
     /**
@@ -66,7 +67,7 @@ class ArticleController extends Controller
         $articles = Article::find($id);
         $input = $request->all();
         $articles->update($input);
-        return redirect('article')->with('flash_message', 'Article Updated!');
+        return redirect('web.article.index')->with('flash_message', 'Article Updated!');
     }
 
     /**
@@ -76,6 +77,6 @@ class ArticleController extends Controller
     {
         //
         Article::destroy($id);
-        return redirect('article')->with('flash_message', 'Article Deleted!');
+        return redirect('web.article.index')->with('flash_message', 'Article Deleted!');
     }
 }

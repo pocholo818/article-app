@@ -31,7 +31,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 120px;">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        <a href="{{ url('/article') }}"><button class="btn">Home</button></a>
+                        <a href="{{ url('/home') }}"><button class="btn">Home</button></a>
+                    </ul>
+                    <ul class="navbar-nav me-auto">
+                        <a href="{{ url('/article') }}"><button class="btn">Articles</button></a>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
