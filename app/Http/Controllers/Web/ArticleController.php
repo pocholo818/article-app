@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
@@ -15,7 +15,7 @@ class ArticleController extends Controller
     {
         //
         $articles = Article::paginate(2);
-        return view('web.article.index')->with('articles', $articles);
+        return view('Web.article.index')->with('articles', $articles);
     }
 
     /**
@@ -24,7 +24,7 @@ class ArticleController extends Controller
     public function create()
     {
         //
-        return view('web.article.create');
+        return view('Web.article.create');
     }
 
     /**
@@ -35,7 +35,7 @@ class ArticleController extends Controller
         //
         $input = $request->all();
         Article::create($input);
-        return redirect('web.article')->with('flash_message', 'Article Added!');
+        return redirect('/article')->with('flash_message', 'Article Added!');
     }
 
     /**
@@ -45,7 +45,7 @@ class ArticleController extends Controller
     {
         //
         $articles = Article::find($id);
-        return view('web.article.show')->with('articles', $articles);
+        return view('Web.article.show')->with('articles', $articles);
     }
 
     /**
@@ -55,7 +55,7 @@ class ArticleController extends Controller
     {
         //
         $articles = Article::find($id);
-        return view('web.article.edit')->with('articles', $articles);
+        return view('Web.article.edit')->with('articles', $articles);
     }
 
     /**
@@ -67,7 +67,7 @@ class ArticleController extends Controller
         $articles = Article::find($id);
         $input = $request->all();
         $articles->update($input);
-        return redirect('web.article.index')->with('flash_message', 'Article Updated!');
+        return redirect('/article')->with('flash_message', 'Article Updated!');
     }
 
     /**
@@ -77,6 +77,6 @@ class ArticleController extends Controller
     {
         //
         Article::destroy($id);
-        return redirect('web.article.index')->with('flash_message', 'Article Deleted!');
+        return redirect('/article')->with('flash_message', 'Article Deleted!');
     }
 }
