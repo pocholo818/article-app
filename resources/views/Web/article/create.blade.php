@@ -5,7 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Add New Article') }}</div>
+                <div class="card-header d-flex flex-row align-items-center justify-content-between">{{ __('Add New Article') }}
+                    <a href="{{ url('article') }}"
+                        class="btn btn-success btn-sm" title="Add New Article">X</a>
+                </div>
 
                 <div class="card-body">
                     <form action="{{ url('article') }}" method="post">

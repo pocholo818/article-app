@@ -5,17 +5,16 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Edit Article') }}
-                    <a href="{{ url()->previous() }}" style="float: right;"
+                <div class="card-header d-flex flex-row align-items-center justify-content-between" >{{ __('View Article') }}
+                    <a href="{{ url('article') }}"
                         class="btn btn-success btn-sm" title="Add New Article">X</a>
                 </div>
 
                 <div class="card-body">
                     <form action="{{ url('article') }}" method="post">
                         {!! csrf_field() !!}
-                        <h5>{{ $articles->title }}</h5>
+                        <h3 class="m-0">{{ $articles->title }}</h3>
                         <p>{{ date('m/d/Y h:i A', strtotime($articles->created_at)) }}</p>
-                        </br>
 
                         <p>{{ $articles->content }}</p>
                         <!-- <label>Title</label></br>

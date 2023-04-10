@@ -5,11 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('View Article') }} 
-                    @if(auth()->user())
-                        <a href="{{ url()->previous() }}" style="float: right;"
+                <div class="card-header d-flex flex-row align-items-center justify-content-between">{{ __('Editting Article') }} 
+                        <a href="{{ url('article') }}"
                             class="btn btn-success btn-sm" title="Add New Article">X</a>
-                    @endif
                 </div>
 
                 <div class="card-body">
